@@ -4,7 +4,7 @@
 	"description": "Populates your cspell.json dictionary with existing unknown words. 🔖",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/JoshuaKGoldberg/cspell-populate-words"
+		"url": "git+https://github.com/JoshuaKGoldberg/cspell-populate-words.git"
 	},
 	"license": "MIT",
 	"author": {
@@ -13,7 +13,9 @@
 	},
 	"type": "module",
 	"main": "./lib/index.js",
-	"bin": "./bin/index.mjs",
+	"bin": {
+		"cspell-populate-words": "bin/index.mjs"
+	},
 	"files": [
 		"bin/index.mjs",
 		"lib/",
