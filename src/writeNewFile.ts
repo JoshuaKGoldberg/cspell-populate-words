@@ -1,5 +1,6 @@
 import * as fs from "node:fs/promises";
 
+import { resolve } from "./resolve.js";
 import { CSpellData } from "./types.js";
 
 export async function writeNewFile(
@@ -30,7 +31,7 @@ export async function writeNewFile(
 
 async function importPrettierIfAvailable() {
 	try {
-		const prettierPath = import.meta.resolve("prettier");
+		const prettierPath = resolve("prettier");
 		return (await import(prettierPath)) as typeof import("prettier");
 	} catch {
 		return undefined;

@@ -34,7 +34,19 @@ describe("populateWords", () => {
 		expect(mockWriteNewFile).not.toHaveBeenCalled();
 	});
 
-	it("writes when there is a missing word", async () => {
+	it("writes when there is a missing word and no existing words", async () => {
+		const existingFile = {};
+		const missingWords = ["missing"];
+
+		mockGetExistingFile.mockResolvedValue(existingFile);
+		mockGetMissingWords.mockResolvedValue(missingWords);
+
+		await populateWords();
+
+		expect(mockWriteNewFile).toHaveBeenCalledWith(existingFile, ["missing"]);
+	});
+
+	it("writes when there is a missing word against existing words", async () => {
 		const existingFile = { words: ["existing"] };
 		const missingWords = ["missing"];
 

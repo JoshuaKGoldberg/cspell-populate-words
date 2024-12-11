@@ -12,7 +12,7 @@ export async function populateWords() {
 		return;
 	}
 
-	const allWords = new Set([...existingFile.words, ...missingWords]);
+	const allWords = new Set([...(existingFile.words ?? []), ...missingWords]);
 
 	const replacementWords = Array.from(allWords)
 		.filter((word) => {
