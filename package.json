@@ -13,7 +13,9 @@
 	},
 	"type": "module",
 	"main": "./lib/index.js",
+	"bin": "./bin/index.mjs",
 	"files": [
+		"bin/index.mjs",
 		"lib/",
 		"package.json",
 		"LICENSE.md",
@@ -33,6 +35,9 @@
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
+	},
+	"dependencies": {
+		"cspell": "^8.16.1"
 	},
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
@@ -71,6 +76,7 @@
 		"typescript-eslint": "^8.18.0",
 		"vitest": "^2.1.8"
 	},
+	"packageManager": "pnpm@8.9.0+sha512.ef8859938e1f0537b9fcf0309044311392f3b38b344176e6cd4fdee21b225524b0ac2a1b08ae2ae2ddd5b3ff4b8ca496d6778e950f3e7c9f555b81325982441c",
 	"engines": {
 		"node": ">=18.3.0"
 	},

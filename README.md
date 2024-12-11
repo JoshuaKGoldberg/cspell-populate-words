@@ -17,14 +17,28 @@
 
 ## Usage
 
+Run `cspell-populate-words` as a command in your CLI to add any words currently reported by `cspell` as typos to the `words` array in your `cspell.json`.
+
+```shell
+npx cspell-populate-words
+```
+
+If a `cspell.json` doesn't yet exist, one will be created for you.
+
+If the `prettier` package is available, such as already being a dependency in your repository, it will be used to format the file.
+
+### Node.js API
+
+A `populateWords` function is exported that you can use programmatically:
+
 ```shell
 npm i cspell-populate-words
 ```
 
 ```ts
-import { greet } from "cspell-populate-words";
+import { populateWords } from "cspell-populate-words";
 
-greet("Hello, world! 💖");
+await populateWords();
 ```
 
 ## Contributors
