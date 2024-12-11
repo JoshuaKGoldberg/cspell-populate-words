@@ -1,5 +1,4 @@
-export interface GreetOptions {
-	logger?: (message: string) => void;
-	message: string;
-	times?: number;
+export interface CSpellData {
+	[i: string]: unknown;
+	words: string[];
 }

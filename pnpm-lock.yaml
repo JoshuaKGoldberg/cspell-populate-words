@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      cspell:
+        specifier: ^8.16.1
+        version: 8.16.1
     devDependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
         specifier: ^4.4.1
@@ -35,9 +39,6 @@ importers:
       console-fail-test:
         specifier: ^0.5.0
         version: 0.5.0
-      cspell:
-        specifier: ^8.16.1
-        version: 8.16.1
       eslint:
         specifier: ^9.16.0
         version: 9.16.0(jiti@2.4.1)
