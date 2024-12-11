@@ -1,3 +1,9 @@
+## [0.2.1](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.0...0.2.1) (2024-12-11)
+
+### Bug Fixes
+
+- handle existing file not having words ([cb2f513](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/cb2f5135c7631b29f9bcac8d6829878b6de31c95))
+
 # 0.2.0 (2024-12-11)
 
 ### Bug Fixes

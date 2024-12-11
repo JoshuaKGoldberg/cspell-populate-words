@@ -1,6 +1,6 @@
 {
 	"name": "cspell-populate-words",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Populates your cspell.json dictionary with existing unknown words. 🔖",
 	"repository": {
 		"type": "git",
