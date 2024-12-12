@@ -1,3 +1,9 @@
+## [0.2.2](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.1...0.2.2) (2024-12-12)
+
+### Bug Fixes
+
+- throw error if no glob(s) provided ([f0eb4ad](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/f0eb4adab7776b23b253e645784d14334615cc8c))
+
 ## [0.2.1](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.0...0.2.1) (2024-12-11)
 
 ### Bug Fixes
