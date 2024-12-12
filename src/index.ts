@@ -2,10 +2,14 @@ import { getExistingFile } from "./getExistingFile.js";
 import { getMissingWords } from "./getMissingWords.js";
 import { writeNewFile } from "./writeNewFile.js";
 
-export async function populateWords() {
+export async function populateWords(glob: string) {
+	if (!glob) {
+		throw new Error(">=1 glob pattern required for files to run cspell on.");
+	}
+
 	const [existingFile, missingWords] = await Promise.all([
 		getExistingFile(),
-		getMissingWords(process.argv.slice(2).join(" ")),
+		getMissingWords(glob),
 	]);
 
 	if (!missingWords.length) {

@@ -11,7 +11,7 @@ vi.mock("node:child_process", () => ({
 			command: string,
 			callback: (_error: unknown, result: unknown) => void,
 		) {
-			return mockExec(command)
+			mockExec(command)
 				.then((result) => {
 					callback(...result);
 				})
