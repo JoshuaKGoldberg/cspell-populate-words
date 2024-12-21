@@ -32,7 +32,7 @@ If the `prettier` package is available, such as already being a dependency in yo
 `cspell-populate-words` takes in any non-zero number of file globs to look at.
 The file globs are passed directly to the `cspell` CLI.
 
-For example, to look at all files, and opt into `.github/` dotfiles:
+For example, to look at all files, and opt into `.github/`:
 
 ```shell
 npx cspell \"**\" \".github/**/*\"
