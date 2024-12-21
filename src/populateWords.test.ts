@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { populateWords } from "./index.js";
+import { populateWords } from "./populateWords.js";
 
 const mockGetExistingFile = vi.fn();
 const mockGetMissingWords = vi.fn();
@@ -25,19 +25,11 @@ vi.mock("./writeNewFile.js", () => ({
 }));
 
 describe("populateWords", () => {
-	it("throws an error when an empty glob is provided", async () => {
-		await expect(async () => {
-			await populateWords("");
-		}).rejects.toMatchInlineSnapshot(
-			`[Error: >=1 glob pattern required for files to run cspell on.]`,
-		);
-	});
-
 	it("does not write when there are no missing words", async () => {
 		mockGetExistingFile.mockResolvedValue({});
 		mockGetMissingWords.mockResolvedValue([]);
 
-		await populateWords(`"**/*"`);
+		await populateWords({ globs: [`"**/*"`] });
 
 		expect(mockWriteNewFile).not.toHaveBeenCalled();
 	});
@@ -49,7 +41,7 @@ describe("populateWords", () => {
 		mockGetExistingFile.mockResolvedValue(existingFile);
 		mockGetMissingWords.mockResolvedValue(missingWords);
 
-		await populateWords(`"**/*"`);
+		await populateWords({ globs: [`"**/*"`] });
 
 		expect(mockWriteNewFile).toHaveBeenCalledWith(existingFile, ["missing"]);
 	});
@@ -61,7 +53,7 @@ describe("populateWords", () => {
 		mockGetExistingFile.mockResolvedValue(existingFile);
 		mockGetMissingWords.mockResolvedValue(missingWords);
 
-		await populateWords(`"**/*"`);
+		await populateWords({ globs: [`"**/*"`] });
 
 		expect(mockWriteNewFile).toHaveBeenCalledWith(existingFile, [
 			"existing",
@@ -76,7 +68,7 @@ describe("populateWords", () => {
 		mockGetExistingFile.mockResolvedValue(existingFile);
 		mockGetMissingWords.mockResolvedValue(missingWords);
 
-		await populateWords(`"**/*"`);
+		await populateWords({ globs: [`"**/*"`] });
 
 		expect(mockWriteNewFile).toHaveBeenCalledWith(existingFile, [
 			"existing",

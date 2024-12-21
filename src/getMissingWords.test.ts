@@ -23,23 +23,37 @@ vi.mock("node:child_process", () => ({
 }));
 
 vi.mock("./resolve.js", () => ({
-	resolve: () => "node_modules/cspell/bin",
+	resolve: () => "node_modules/cspell/bin.mjs",
 }));
 
 describe("getMissingWords", () => {
 	it("returns none when cspell passes", async () => {
 		mockExec.mockResolvedValueOnce([undefined, { stdout: "cspell passed." }]);
 
-		const missingWords = await getMissingWords(`"**/*"`);
+		const missingWords = await getMissingWords([`"**/*"`], ["abc", "def"]);
 
 		expect(missingWords).toEqual([]);
+		expect(mockExec.mock.calls).toMatchInlineSnapshot(`
+			[
+			  [
+			    "echo "abc def" | node node_modules/cspell/bin.mjs "**/*"  --quiet --words-only stdin",
+			  ],
+			]
+		`);
 	});
 
 	it("returns the missing words when cspell fails", async () => {
 		mockExec.mockRejectedValueOnce({ stdout: "abc def" });
 
-		const missingWords = await getMissingWords(`"**/*"`);
+		const missingWords = await getMissingWords([`"**/*"`], ["abc", "def"]);
 
 		expect(missingWords).toEqual(["abc", "def"]);
+		expect(mockExec.mock.calls).toMatchInlineSnapshot(`
+			[
+			  [
+			    "echo "abc def" | node node_modules/cspell/bin.mjs "**/*"  --quiet --words-only stdin",
+			  ],
+			]
+		`);
 	});
 });
