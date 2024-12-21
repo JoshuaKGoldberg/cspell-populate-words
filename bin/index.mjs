@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { populateWords } from "../lib/index.js";
+import { cli } from "../lib/cli.js";
 
-await populateWords(process.argv.slice(2).join(" "));
+await cli(process.argv.slice(2));

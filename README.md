@@ -35,12 +35,30 @@ The file globs are passed directly to the `cspell` CLI.
 For example, to look at all files, and opt into `.github/`:
 
 ```shell
-npx cspell \"**\" \".github/**/*\"
+npx cspell \"**/*\" \".github/**/*\"
 ```
 
-### Node.js API
+#### `--words`
 
-A `populateWords` function is exported that you can use programmatically:
+Any number of `--words` can be provided along with -or instead of- positional file globs.
+These words will be passed to [`cspell`'s `stdin` option](https://cspell.org/docs/getting-started/#options).
+
+For example, providing `mistake`, `typo`, and `zzz` as words:
+
+```shell
+npx cspell --words mistake --words "typo zzz"
+```
+
+Providing `typo` alongside file globs:
+
+```shell
+npx cspell \"**/*\" --words typo
+```
+
+## Node.js API
+
+A `populateWords` function is exported that you can use programmatically.
+It takes in `globs` and/or `words` `string[]`s similar to the CLI:
 
 ```shell
 npm i cspell-populate-words
@@ -49,7 +67,9 @@ npm i cspell-populate-words
 ```ts
 import { populateWords } from "cspell-populate-words";
 
-await populateWords();
+await populateWords({ globs: ["**/*"] });
+await populateWords({ words: ["mistake", "typo zzz"] });
+await populateWords({ globs: ["**/*"], words: ["mistake", "typo zzz"] });
 ```
 
 ## Contributors
