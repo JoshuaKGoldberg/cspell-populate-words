@@ -1,3 +1,9 @@
+# [0.3.0](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.2...0.3.0) (2024-12-21)
+
+### Features
+
+- add --words ([#14](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/14)) ([61366f1](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/61366f1cb87b78a44d5fab274d6b0ca2f629cb69)), closes [#11](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/11)
+
 ## [0.2.2](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.1...0.2.2) (2024-12-12)
 
 ### Bug Fixes
