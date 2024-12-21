@@ -20,5 +20,7 @@ export async function cli(args: string[]) {
 }
 
 function asArray(words: (boolean | string)[] | undefined) {
-	return words && Array.isArray(words) ? words.map((word) => String(word)) : [];
+	return words && Array.isArray(words)
+		? words.filter((word) => typeof word === "string")
+		: [];
 }

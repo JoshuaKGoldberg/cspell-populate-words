@@ -11,12 +11,21 @@ vi.mock("./populateWords.js", () => ({
 }));
 
 describe("cli", () => {
-	it("passes parsed args to populateWords", async () => {
+	it("passes parsed args to populateWords when valid", async () => {
 		await cli(["**", "--words", "typo"]);
 
 		expect(mockPopulateWords).toHaveBeenCalledWith({
 			globs: ["**"],
 			words: ["typo"],
+		});
+	});
+
+	it("passes nothing to populateWords when invalid", async () => {
+		await cli(["--words"]);
+
+		expect(mockPopulateWords).toHaveBeenCalledWith({
+			globs: [],
+			words: [],
 		});
 	});
 });
