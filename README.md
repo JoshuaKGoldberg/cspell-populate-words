@@ -43,7 +43,7 @@ npx cspell \"**/*\" \".github/**/*\"
 Any number of `--words` can be provided along with -or instead of- positional file globs.
 These words will be passed to [`cspell`'s `stdin` option](https://cspell.org/docs/getting-started/#options).
 
-For example, providing `mistake`, `typo`, `zzz` as words:
+For example, providing `mistake`, `typo`, and `zzz` as words:
 
 ```shell
 npx cspell --words mistake --words "typo zzz"
@@ -68,6 +68,8 @@ npm i cspell-populate-words
 import { populateWords } from "cspell-populate-words";
 
 await populateWords({ globs: ["**/*"] });
+await populateWords({ words: ["mistake", "typo zzz"] });
+await populateWords({ globs: ["**/*"], words: ["mistake", "typo zzz"] });
 ```
 
 ## Contributors
