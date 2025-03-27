@@ -1,4 +1,5 @@
 import {
+	blockCodecov,
 	blockCTATransitions,
 	blockESLint,
 	createConfig,
@@ -7,6 +8,11 @@ import {
 export default createConfig({
 	refinements: {
 		addons: [
+			blockCodecov({
+				env: {
+					CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}",
+				},
+			}),
 			blockESLint({
 				rules: [
 					{
