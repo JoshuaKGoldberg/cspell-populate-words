@@ -2,6 +2,7 @@ import {
 	blockCodecov,
 	blockCTATransitions,
 	blockESLint,
+	blockVitest,
 	createConfig,
 } from "create-typescript-app";
 
@@ -24,6 +25,11 @@ export default createConfig({
 						},
 					},
 				],
+			}),
+			blockVitest({
+				coverage: {
+					exclude: ["lib", "src/resolve.ts"],
+				},
 			}),
 		],
 		blocks: {
