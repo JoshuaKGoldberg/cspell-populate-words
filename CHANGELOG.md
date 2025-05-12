@@ -1,3 +1,11 @@
+# Changelog
+
+## [0.3.1](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.3.0...0.3.1) (2025-05-12)
+
+### Bug Fixes
+
+- **deps:** update dependency cspell to v9 ([#69](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/69)) ([389a124](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/389a1246b04b95231fc49780fccafccaada27cb1))
+
 # [0.3.0](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.2...0.3.0) (2024-12-21)
 
 ### Features
