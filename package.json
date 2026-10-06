@@ -39,7 +39,9 @@
 		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
-		"cspell": "^10.0.0"
+		"cspell": "^10.0.0",
+		"parse-standard-args": "link:../parse-standard-args",
+		"zod": "^4.6.5"
 	},
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.8.0",
