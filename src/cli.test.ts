@@ -96,7 +96,7 @@ describe("cli", () => {
 			File globs are passed to cspell. At least one glob or --words is required.
 
 			Options:
-			      --words <word>  Word to check with cspell, along with any globs (default: [], repeatable)
+			      --words <word>  Word to check with cspell, along with any globs (repeatable)
 			  -h, --help          Show this help message
 
 			Examples:

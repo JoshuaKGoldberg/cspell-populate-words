@@ -1,9 +1,9 @@
-import { createCli } from "parse-standard-args";
+import { parseStandardArgv } from "parse-standard-args";
 import { z } from "zod";
 
 import { populateWords } from "./populateWords.js";
 
-const populateWordsCli = createCli({
+const settings = {
 	description: [
 		"Populates your cspell.json dictionary with existing unknown words. 🔖",
 		"File globs are passed to cspell. At least one glob or --words is required.",
@@ -24,11 +24,19 @@ const populateWordsCli = createCli({
 	positionalsUsage: "[globs...]",
 	// Unknown flags have always been ignored, so existing scripts may pass them.
 	strict: false,
-});
+};
 
 export async function cli(args: string[]) {
-	const parsed = await populateWordsCli.run(args);
-	if (!parsed) {
+	const parsed = parseStandardArgv(args, settings);
+
+	if (parsed.type === "error") {
+		console.error(parsed.text);
+		process.exitCode = 1;
+		return undefined;
+	}
+
+	if (parsed.type !== "values") {
+		console.log(parsed.text);
 		return undefined;
 	}
 
