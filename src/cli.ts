@@ -21,7 +21,6 @@ const settings = {
 			.meta({ placeholder: "word" }),
 	}),
 	positionals: z.array(z.string()).meta({ placeholder: "globs" }),
-	// Unknown flags have always been ignored, so existing scripts may pass them.
 	strict: false,
 };
 
