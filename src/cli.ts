@@ -4,10 +4,8 @@ import { z } from "zod";
 import { populateWords } from "./populateWords.js";
 
 const settings = {
-	description: [
-		"Populates your cspell.json dictionary with existing unknown words. 🔖",
-		"File globs are passed to cspell.",
-	].join("\n"),
+	description:
+		"Populates your cspell.json dictionary with existing unknown words. 🔖\nFile globs are passed to cspell.",
 	examples: [
 		`cspell-populate-words "**/*" ".github/**/*"`,
 		"cspell-populate-words --words mistake --words typo",
