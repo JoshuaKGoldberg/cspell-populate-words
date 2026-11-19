@@ -1,26 +1,43 @@
-import { parseArgs } from "node:util";
+import { parseStandardArgv } from "parse-standard-args";
+import { z } from "zod";
 
 import { populateWords } from "./populateWords.js";
 
+const settings = {
+	description:
+		"Populates your cspell.json dictionary with existing unknown words. 🔖\nFile globs are passed to cspell.",
+	examples: [
+		`cspell-populate-words "**/*" ".github/**/*"`,
+		"cspell-populate-words --words mistake --words typo",
+	],
+	name: "cspell-populate-words",
+	options: z.object({
+		words: z
+			.array(z.string())
+			.default([])
+			.describe("Word to check with cspell, along with any globs")
+			.meta({ placeholder: "word" }),
+	}),
+	positionals: z.array(z.string()).meta({ placeholder: "globs" }),
+	strict: false,
+};
+
 export async function cli(args: string[]) {
-	const { positionals, values } = parseArgs({
-		args,
-		options: {
-			words: {
-				multiple: true,
-				type: "string",
-			},
-		},
-		strict: false,
+	const parsed = parseStandardArgv(args, settings);
+
+	if (parsed.type === "error") {
+		console.error(parsed.text);
+		process.exitCode = 1;
+		return undefined;
+	}
+
+	if (parsed.type !== "values") {
+		console.log(parsed.text);
+		return undefined;
+	}
+
+	return await populateWords({
+		globs: parsed.positionals,
+		words: parsed.values.words,
 	});
-
-	const words = asArray(values.words);
-
-	return await populateWords({ globs: positionals, words });
-}
-
-function asArray(words: (boolean | string)[] | undefined) {
-	return words && Array.isArray(words)
-		? words.filter((word) => typeof word === "string")
-		: [];
 }

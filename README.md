@@ -26,6 +26,8 @@ Run `cspell-populate-words` as a command in your CLI to add any words currently 
 npx cspell-populate-words "**/*"
 ```
 
+Run `cspell-populate-words -h` or `--help` to see all options.
+
 If a `cspell.json` doesn't yet exist, one will be created for you.
 
 If the `prettier` package is available, such as already being a dependency in your repository, it will be used to format the file.
