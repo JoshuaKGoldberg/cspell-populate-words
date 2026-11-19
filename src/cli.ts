@@ -6,7 +6,7 @@ import { populateWords } from "./populateWords.js";
 const settings = {
 	description: [
 		"Populates your cspell.json dictionary with existing unknown words. 🔖",
-		"File globs are passed to cspell. At least one glob or --words is required.",
+		"File globs are passed to cspell.",
 	].join("\n"),
 	examples: [
 		`cspell-populate-words "**/*" ".github/**/*"`,

@@ -93,7 +93,7 @@ describe("cli", () => {
 			    "Usage: cspell-populate-words [options] [globs...]
 
 			Populates your cspell.json dictionary with existing unknown words. 🔖
-			File globs are passed to cspell. At least one glob or --words is required.
+			File globs are passed to cspell.
 
 			Options:
 			      --words <word>  Word to check with cspell, along with any globs (repeatable)

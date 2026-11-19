@@ -41,7 +41,7 @@
 	"dependencies": {
 		"cspell": "^10.0.0",
 		"parse-standard-args": "^0.3.0",
-		"zod": "^4.6.5"
+		"zod": "^4.2.0"
 	},
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.8.0",
