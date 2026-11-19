@@ -15,7 +15,6 @@ const mockLog = vi.fn();
 
 describe("cli", () => {
 	beforeEach(() => {
-		// Stubbed instead of spied on, so console-fail-test doesn't see the calls.
 		vi.stubGlobal("console", { ...console, error: mockError, log: mockLog });
 	});
 
