@@ -12,7 +12,7 @@
 
 - **deps:** update dependency cspell to v9 ([#69](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/69)) ([389a124](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/389a1246b04b95231fc49780fccafccaada27cb1))
 
-# [0.3.0](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.2...0.3.0) (2024-12-21)
+## [0.3.0](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.2.2...0.3.0) (2024-12-21)
 
 ### Features
 
@@ -30,7 +30,7 @@
 
 - handle existing file not having words ([cb2f513](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/cb2f5135c7631b29f9bcac8d6829878b6de31c95))
 
-# 0.2.0 (2024-12-11)
+## 0.2.0 (2024-12-11)
 
 ### Bug Fixes
 

@@ -1,1 +1,1 @@
-export * from "./populateWords.js";
+export * from "./populateWords.ts";

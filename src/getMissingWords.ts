@@ -1,7 +1,7 @@
 import childProcess from "node:child_process";
 import util from "node:util";
 
-import { resolve } from "./resolve.js";
+import { resolve } from "./resolve.ts";
 const exec = util.promisify(childProcess.exec);
 
 export async function getMissingWords(globs: string[], words: string[]) {

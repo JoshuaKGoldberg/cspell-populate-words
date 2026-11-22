@@ -1,10 +1,9 @@
-import { getExistingFile } from "./getExistingFile.js";
-import { getMissingWords } from "./getMissingWords.js";
-import { writeNewFile } from "./writeNewFile.js";
+import { getExistingFile } from "./getExistingFile.ts";
+import { getMissingWords } from "./getMissingWords.ts";
+import { writeNewFile } from "./writeNewFile.ts";
 
 export type PopulateWordsSettings =
-	| PopulateWordsSettingsWithGlobs
-	| PopulateWordsSettingsWithWords;
+	PopulateWordsSettingsWithGlobs | PopulateWordsSettingsWithWords;
 
 export interface PopulateWordsSettingsWithGlobs {
 	globs: string[];
