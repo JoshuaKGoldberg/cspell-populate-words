@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.4](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.3.3...0.3.4) (2026-11-24)
+
+### Bug Fixes
+
+- run cspell without a shell ([#393](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/393)) ([4e4a1d3](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/4e4a1d3fc740394db2130a5c46283071a186b348)), closes [#392](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/392)
+
 ## [0.3.3](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.3.2...0.3.3) (2026-11-24)
 
 ### Bug Fixes
