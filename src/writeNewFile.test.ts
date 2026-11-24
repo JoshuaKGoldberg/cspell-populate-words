@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { writeNewFile } from "./writeNewFile.js";
+import { writeNewFile } from "./writeNewFile.ts";
 
 const mockWriteFile = vi.fn();
 
@@ -17,7 +17,7 @@ vi.mock("prettier", async () => ({
 
 const mockResolve = vi.fn();
 
-vi.mock("./resolve.js", () => ({
+vi.mock("./resolve.ts", () => ({
 	get resolve() {
 		return mockResolve;
 	},
@@ -27,7 +27,7 @@ const existingFile = { dictionaries: ["typescript"] };
 
 const replacementWords = ["abc", "def"];
 
-describe("writeNewFile", () => {
+describe(writeNewFile, () => {
 	it("prints JSON.stringify-formatted data when prettier cannot be imported", async () => {
 		mockResolve.mockImplementationOnce(() => {
 			throw new Error("Cannot find prettier.");

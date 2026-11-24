@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { getExistingFile } from "./getExistingFile.js";
+import { getExistingFile } from "./getExistingFile.ts";
 
 const mockReadFile = vi.fn();
 
@@ -10,7 +10,7 @@ vi.mock("node:fs/promises", () => ({
 	},
 }));
 
-describe("getExistingFile", () => {
+describe(getExistingFile, () => {
 	it("returns file data when cspell.json exists", async () => {
 		const data = { words: ["abc"] };
 

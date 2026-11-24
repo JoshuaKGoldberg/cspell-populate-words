@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { getMissingWords } from "./getMissingWords.js";
+import { getMissingWords } from "./getMissingWords.ts";
 
 const mockExecFile =
 	vi.fn<
@@ -28,11 +28,11 @@ vi.mock("node:child_process", () => ({
 	},
 }));
 
-vi.mock("./resolve.js", () => ({
+vi.mock("./resolve.ts", () => ({
 	resolve: () => "node_modules/cspell/bin.mjs",
 }));
 
-describe("getMissingWords", () => {
+describe(getMissingWords, () => {
 	it("returns none when cspell passes", async () => {
 		mockExecFile.mockReturnValueOnce([undefined, "cspell passed."]);
 

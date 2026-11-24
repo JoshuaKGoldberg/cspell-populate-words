@@ -1,7 +1,7 @@
 import * as fs from "node:fs/promises";
 
-import { resolve } from "./resolve.js";
-import { CSpellData } from "./types.js";
+import { resolve } from "./resolve.ts";
+import { CSpellData } from "./types.ts";
 
 export async function writeNewFile(
 	existingFile: CSpellData,

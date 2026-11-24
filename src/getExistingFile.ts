@@ -1,6 +1,6 @@
 import * as fs from "node:fs/promises";
 
-import { CSpellData } from "./types.js";
+import { CSpellData } from "./types.ts";
 
 export async function getExistingFile() {
 	try {

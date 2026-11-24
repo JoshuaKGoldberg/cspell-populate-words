@@ -1,16 +1,16 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { cli } from "./cli.js";
+import { cli } from "./cli.ts";
 
 const mockPopulateWords = vi.fn();
 
-vi.mock("./populateWords.js", () => ({
+vi.mock("./populateWords.ts", () => ({
 	get populateWords() {
 		return mockPopulateWords;
 	},
 }));
 
-describe("cli", () => {
+describe(cli, () => {
 	it("passes parsed args to populateWords when valid", async () => {
 		await cli(["**", "--words", "typo"]);
 

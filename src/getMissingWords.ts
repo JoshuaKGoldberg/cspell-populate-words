@@ -1,6 +1,6 @@
 import childProcess from "node:child_process";
 
-import { resolve } from "./resolve.js";
+import { resolve } from "./resolve.ts";
 
 export async function getMissingWords(globs: string[], words: string[]) {
 	const rawBin = resolve("cspell/bin");
