@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.3](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.3.2...0.3.3) (2026-11-24)
+
+### Bug Fixes
+
+- bump to create-typescript-app@2.87.18 ([#391](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/391)) ([077d09f](https://github.com/JoshuaKGoldberg/cspell-populate-words/commit/077d09f89b493224c513d6a2fc276965f8582f36)), closes [#390](https://github.com/JoshuaKGoldberg/cspell-populate-words/issues/390)
+
 ## [0.3.2](https://github.com/JoshuaKGoldberg/cspell-populate-words/compare/0.3.1...0.3.2) (2026-09-20)
 
 ### Bug Fixes
