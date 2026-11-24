@@ -1,6 +1,6 @@
 import { parseArgs } from "node:util";
 
-import { populateWords } from "./populateWords.js";
+import { populateWords } from "./populateWords.ts";
 
 export async function cli(args: string[]) {
 	const { positionals, values } = parseArgs({

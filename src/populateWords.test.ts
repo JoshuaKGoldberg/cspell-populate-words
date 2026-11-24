@@ -1,30 +1,30 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { populateWords } from "./populateWords.js";
+import { populateWords } from "./populateWords.ts";
 
 const mockGetExistingFile = vi.fn();
 const mockGetMissingWords = vi.fn();
 const mockWriteNewFile = vi.fn();
 
-vi.mock("./getExistingFile.js", () => ({
+vi.mock("./getExistingFile.ts", () => ({
 	get getExistingFile() {
 		return mockGetExistingFile;
 	},
 }));
 
-vi.mock("./getMissingWords.js", () => ({
+vi.mock("./getMissingWords.ts", () => ({
 	get getMissingWords() {
 		return mockGetMissingWords;
 	},
 }));
 
-vi.mock("./writeNewFile.js", () => ({
+vi.mock("./writeNewFile.ts", () => ({
 	get writeNewFile() {
 		return mockWriteNewFile;
 	},
 }));
 
-describe("populateWords", () => {
+describe(populateWords, () => {
 	it("does not write when there are no missing words", async () => {
 		mockGetExistingFile.mockResolvedValue({});
 		mockGetMissingWords.mockResolvedValue([]);
