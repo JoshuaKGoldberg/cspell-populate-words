@@ -38,7 +38,7 @@ The file globs are passed directly to the `cspell` CLI.
 For example, to look at all files, and opt into `.github/`:
 
 ```shell
-npx cspell \"**/*\" \".github/**/*\"
+npx cspell "**/*" ".github/**/*"
 ```
 
 #### `--words`
@@ -55,7 +55,7 @@ npx cspell --words mistake --words "typo zzz"
 Providing `typo` alongside file globs:
 
 ```shell
-npx cspell \"**/*\" --words typo
+npx cspell "**/*" --words typo
 ```
 
 ## Node.js API
