@@ -15,7 +15,8 @@
         "infra",
         "maintenance",
         "projectManagement",
-        "tool"
+        "tool",
+        "bug"
       ]
     }
   ],
@@ -26,5 +27,6 @@
   ],
   "projectName": "cspell-populate-words",
   "projectOwner": "JoshuaKGoldberg",
-  "repoType": "github"
+  "repoType": "github",
+  "commitConvention": "angular"
 }
